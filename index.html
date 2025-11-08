@@ -1,0 +1,1471 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TNC CarHub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="shortcut icon"
+      href="https://cdn.prod.website-files.com/653a49092fc4aad2698e5ab9/653a49092fc4aad2698e5b12_logo-tnc-carhub.webp"
+      type="image/x-icon"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      @theme {
+        --color-primary: rgb(208, 23, 23);
+        --color-secondary: #ffb11b;
+        --color-light: #666;
+        --color-card-bg: #f3f3f3;
+        --font-josefin: "Josefin Sans", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="fixed bg-white top-0 z-[10000] shadow-sm left-0 w-full py-[15px] px-[20px] flex items-center justify-between"
+    >
+      <div>
+        <img
+          class="md:w-[150px] w-[100px]"
+          src="https://cdn.prod.website-files.com/653a49092fc4aad2698e5ab9/653a49092fc4aad2698e5b12_logo-tnc-carhub.webp"
+          alt=""
+        />
+      </div>
+      <div class="flex items-center lg:gap-14 gap-3">
+        <ul class="lg:flex hidden font-light items-center gap-[30px]">
+          <li class="hover:text-primary">
+            <a href="#">Home</a>
+          </li>
+          <li class="hover:text-primary">
+            <a href="#">About us</a>
+          </li>
+          <li class="hover:text-primary">
+            <a href="#">Vehicles</a>
+          </li>
+          <li class="hover:text-primary">
+            <a href="#">Gallery</a>
+          </li>
+          <li class="hover:text-primary">
+            <a href="#">Blogs</a>
+          </li>
+          <li class="hover:text-primary">
+            <a href="#">Contact</a>
+          </li>
+          <li class="flex relative group items-center gap-1 hover:text-primary">
+            <a href="#">Shop</a>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="M12 14.975q-.2 0-.375-.062T11.3 14.7l-4.6-4.6q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l3.9 3.9l3.9-3.9q.275-.275.7-.275t.7.275t.275.7t-.275.7l-4.6 4.6q-.15.15-.205.213t-.375.062"
+              />
+            </svg>
+            <ul
+              class="absolute bg-white w-[200px] transition-all group-hover:opacity-100 duration-500 opacity-0 group-hover:bottom-[-110px] bottom-[-140px] flex flex-col gap-4 rounded-md shadow-md p-[20px]"
+            >
+              <li>
+                <a href="#">Shop Page</a>
+              </li>
+              <li>
+                <a href="#">Single Product Page</a>
+              </li>
+            </ul>
+          </li>
+          <li class="flex items-center group relative gap-1 hover:text-primary">
+            <a href="#">Pages</a>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="M12 14.975q-.2 0-.375-.062T11.3 14.7l-4.6-4.6q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l3.9 3.9l3.9-3.9q.275-.275.7-.275t.7.275t.275.7t-.275.7l-4.6 4.6q-.15.15-.325.213t-.375.062"
+              />
+            </svg>
+            <ul
+              class="absolute bg-white w-[200px] transition-all group-hover:opacity-100 duration-500 opacity-0 group-hover:bottom-[-280px] bottom-[-300px] flex flex-col gap-4 rounded-md shadow-md p-[20px]"
+            >
+              <li>
+                <a href="#">Car Detail Page</a>
+              </li>
+              <li>
+                <a href="#">Blog Detail Page</a>
+              </li>
+              <li>
+                <a href="#">Extra 404 Page</a>
+              </li>
+              <li>
+                <a href="#">Style Guide</a>
+              </li>
+              <li>
+                <a href="#">Change Log</a>
+              </li>
+              <li>
+                <a href="#">License</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <div
+          class="flex items-center md:gap-2 gap-5 bg-primary text-white py-[6px] md:px-[14px] px-[25px] rounded-md"
+        >
+          <svg
+            class="w-commerce-commercecartopenlinkicon"
+            width="17px"
+            height="17px"
+            viewBox="0 0 17 17"
+          >
+            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <path
+                d="M2.60592789,2 L0,2 L0,0 L4.39407211,0 L4.84288393,4 L16,4 L16,9.93844589 L3.76940945,12.3694378 L2.60592789,2 Z M15.5,17 C14.6715729,17 14,16.3284271 14,15.5 C14,14.6715729 14.6715729,14 15.5,14 C16.3284271,14 17,14.6715729 17,15.5 C17,16.3284271 16.3284271,17 15.5,17 Z M5.5,17 C4.67157288,17 4,16.3284271 4,15.5 C4,14.6715729 4.67157288,14 5.5,14 C6.32842712,14 7,14.6715729 7,15.5 C7,16.3284271 6.32842712,17 5.5,17 Z"
+                fill="currentColor"
+                fill-rule="nonzero"
+              ></path>
+            </g>
+          </svg>
+          <p class="font-josefin font-bold pt-1">0</p>
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="32"
+          class="text-primary lg:hidden block"
+          height="32"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="currentColor"
+            d="M4 18q-.425 0-.712-.288T3 17t.288-.712T4 16h16q.425 0 .713.288T21 17t-.288.713T20 18zm0-5q-.425 0-.712-.288T3 12t.288-.712T4 11h16q.425 0 .713.288T21 12t-.288.713T20 13zm0-5q-.425 0-.712-.288T3 7t.288-.712T4 6h16q.425 0 .713.288T21 7t-.288.713T20 8z"
+          />
+        </svg>
+      </div>
+    </div>
+    <div
+      class="md:mt-[90px] mt-[70px] flex items-center pl-[30px] md:h-[90vh] h-[60vh] bg-size-[1800px] bg-center bg-no-repeat"
+      style="
+        background-image: url('https://cdn.prod.website-files.com/653a49092fc4aad2698e5ab9/653a49092fc4aad2698e5b37_pexels-s-von-hoerst-2676096%201.webp');
+      "
+    >
+      <div
+        class="pt-[30px] pl-[30px] pb-[50px] text-white md:w-[800px] leading-[1.2] rounded-sm"
+        style="background-image: linear-gradient(to right, #000000b3, #fff0)"
+      >
+        <p class="font-josefin font-bold md:text-[70px] text-[30px]">
+          Meet the New Stars of Our Showroom
+        </p>
+        <p
+          class="text-gray-300 font-light leading-[1.5] mt-6 md:w-[70%] w-[90%]"
+        >
+          Your Partner in Real Estate Success. Our mission is to help you find
+          the perfect property or sell your current one with ease.
+        </p>
+        <div
+          class="flex items-center gap-3 w-fit mt-12 bg-primary rounded-md py-[13px] px-[27px]"
+        >
+          <p class="font-josefin font-bold text-lg">Buy This Car</p>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="currentColor"
+              d="M16.01 11H4v2h12.01v3L20 12l-3.99-4z"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="grid lg:grid-cols-4 md:grid-cols-2 mt-[100px] px-[20px] gap-4">
+      <div
+        class="bg-card-bg py-[40px] px-[50px] flex flex-col items-center justify-center"
+      >
+        <img
+          class="w-[60px]"
+          src="https://cdn.prod.website-files.com/653a49092fc4aad2698e5ab9/653a49092fc4aad2698e5b07_Mask%20group.webp"
+          alt=""
+        />
+        <p class="font-josefin mt-3 font-bold text-xl">Find a car</p>
+        <p class="text-center mt-4 font-light">
+          We provide a platform to help you find the perfect vehicle your
+          preferences.
+        </p>
+      </div>
+      <div
+        class="bg-card-bg py-[40px] px-[50px] flex flex-col items-center justify-center"
+      >
+        <img
+          class="w-[60px]"
+          src="https://cdn.prod.website-files.com/653a49092fc4aad2698e5ab9/653a49092fc4aad2698e5b30_Mask%20group%20(1).webp"
+          alt=""
+        />
+        <p class="font-josefin mt-3 font-bold text-xl">Pre Order</p>
+        <p class="text-center mt-4 font-light">
+          Get ready to experience innovation, style, and performance like never
+          before.
+        </p>
+      </div>
+      <div
+        class="bg-card-bg py-[40px] px-[50px] flex flex-col items-center justify-center"
+      >
+        <img
+          class="w-[60px]"
+          src="https://cdn.prod.website-files.com/653a49092fc4aad2698e5ab9/653a49092fc4aad2698e5b20_Mask%20group%20(2).webp"
+          alt=""
+        />
+        <p class="font-josefin mt-3 font-bold text-xl">Latest Car</p>
+        <p class="text-center mt-4 font-light">
+          Stay updated on the automotive world's newest sensations.
+        </p>
+      </div>
+      <div
+        class="bg-card-bg py-[40px] px-[50px] flex flex-col items-center justify-center"
+      >
+        <img
+          class="w-[60px]"
+          src="https://cdn.prod.website-files.com/653a49092fc4aad2698e5ab9/653a49092fc4aad2698e5b00_Mask%20group%20(3).webp"
+          alt=""
+        />
+        <p class="font-josefin mt-3 font-bold text-xl">Used Car</p>
+        <p class="text-center mt-4 font-light">
+          Carhub is here to help you find a pre-loved gem that meets your
+          requirements.
+        </p>
+      </div>
+    </div>
+    <div class="mt-[100px] lg:h-[600px] flex lg:flex-row flex-col">
+      <div class="lg:w-[50%] w-full">
+        <img
+          class="w-full h-full"
+          src="https://cdn.prod.website-files.com/653a49092fc4aad2698e5ab9/653a49092fc4aad2698e5b38_pexels-pixabay-164634%201.webp"
+          alt=""
+        />
+      </div>
+      <div
+        class="lg:w-[50%] w-full bg-card-bg md:pl-[50px] md:pr-[30px] px-[20px] lg:py-[0px] py-[60px] h-full flex flex-col justify-center"
+      >
+        <p class="font-josefin font-bold md:text-[50px] text-[25px] mb-3">
+          About TNC CARHUB
+        </p>
+        <p class="font-light leading-[1.6] text-light">
+          TNC Carhub is your gateway to an exceptional automotive experience. As
+          a premier destination for car enthusiasts and buyers, we are committed
+          to redefining how you shop for and interact with cars.
+        </p>
+        <p class="font-light leading-[1.6] text-light mt-7">
+          Our mission is to provide a comprehensive platform that offers an
+          array of services to meet all your automotive needs. Our commitment to
+          excellence extends to our team of experts who are passionate about
+          cars and dedicated to delivering top-tier service.
+        </p>
+        <button
+          class="mt-[40px] bg-primary w-fit py-[10px] px-[30px] rounded-md text-white font-josefin"
+        >
+          Contact us
+        </button>
+      </div>
+    </div>
+    <div class="px-[20px] flex flex-col items-center mt-[100px]">
+      <h1 class="font-josefin md:text-[50px] text-[25px] font-bold">
+        Featured Car
+      </h1>
+      <p class="mt-[10px] lg:w-[50%] w-full text-center font-normal text-light">
+        Buckle up and experience the future of driving with our Featured Cars
+        This cutting-edge vehicle redefines luxury and performance, making every
+        journey an unforgettable experience.
+      </p>
+      <div
+        class="flex md:flex-row flex-col md:gap-0 gap-6 items-center mt-[140px]"
+      >
+        <div
+          class="rounded-[20px] cursor-pointer relative group overflow-hidden"
+        >
+          <img
+            class="lg:w-[580px] lg:h-[560px] md:w-[280px] md:h-[260px] w-full object-cover"
+            src="https://cdn.prod.website-files.com/653a49092fc4aad2698e5ae8/653a49092fc4aad2698e5b7f_Rectangle%20165.png"
+            alt=""
+          />
+          <div
+            class="absolute opacity-0 top-0 group-hover:opacity-100 flex left-0 w-full h-full transition-all duration-500 bg-[#0009] items-center justify-center text-white"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="82"
+              height="82"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="M12 9a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5a5 5 0 0 1 5-5a5 5 0 0 1 5 5a5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          class="rounded-[20px] md:scale-[1.2] shrink-0 relative z-[1] cursor-pointer relative group overflow-hidden"
+        >
+          <img
+            class="lg:w-[580px] lg:h-[560px] md:w-[280px] md:h-[260px] w-full object-cover"
+            src="https://cdn.prod.website-files.com/653a49092fc4aad2698e5ae8/653a49092fc4aad2698e5b80_Rectangle%206.png"
+            alt=""
+          />
+          <div
+            class="absolute opacity-0 top-0 group-hover:opacity-100 flex left-0 w-full h-full transition-all duration-500 bg-[#0009] items-center justify-center text-white"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="82"
+              height="82"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="M12 9a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5a5 5 0 0 1 5-5a5 5 0 0 1 5 5a5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          class="rounded-[20px] cursor-pointer relative group overflow-hidden"
+        >
+          <img
+            class="lg:w-[580px] lg:h-[560px] md:w-[280px] md:h-[260px] w-full object-cover"
+            src="https://cdn.prod.website-files.com/653a49092fc4aad2698e5ae8/653a49092fc4aad2698e5b81_callum-hill-TNvGsWoFQ0A-unsplash.jpg"
+            alt=""
+          />
+          <div
+            class="absolute opacity-0 top-0 group-hover:opacity-100 flex left-0 w-full h-full transition-all duration-500 bg-[#0009] items-center justify-center text-white"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="82"
+              height="82"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="M12 9a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5a5 5 0 0 1 5-5a5 5 0 0 1 5 5a5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-[180px] px-[20px]">
+      <p
+        class="lg:w-[60%] w-full mx-auto md:text-[35px] text-[20px] font-josefin font-bold text-center"
+      >
+        All-Terrain Adventures Await: Browse Our Collection of Rugged Off-Road
+        Vehicles.
+      </p>
+      <div
+        class="flex items-center justify-between mt-[50px] border-b pb-[10px] border-gray-300"
+      >
+        <div>
+          <ul class="flex items-center gap-8 font-josefin text-light">
+            <li class="hover:text-primary text-primary">
+              <a href="#">All</a>
+            </li>
+            <li class="hover:text-primary">
+              <a href="#">Popular</a>
+            </li>
+            <li class="hover:text-primary">
+              <a href="#">New</a>
+            </li>
+            <li class="hover:text-primary">
+              <a href="#">Used</a>
+            </li>
+          </ul>
+        </div>
+        <div class="flex items-center gap-1">
+          <div
+            class="w-[30px] h-[30px] bg-card-bg flex items-center justify-center"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              class="rotate-[180deg]"
+              height="20"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="M16.01 11H4v2h12.01v3L20 12l-3.99-4z"
+              />
+            </svg>
+          </div>
+          <div
+            class="w-[30px] h-[30px] bg-card-bg flex items-center justify-center"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="M16.01 11H4v2h12.01v3L20 12l-3.99-4z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div
+        class="grid xl:grid-cols-3 md:grid-cols-2 md:w-[90%] w-full gap-[30px] mt-8"
+      >
+        <div class="bg-white relative shadow-sm cursor-pointer">
+          <div
+            class="absolute top-[20px] left-0 bg-primary text-white font-josefin font-bold text-base z-[10] p-[10px]"
+          >
+            New Arrival
+          </div>
+          <div class="w-full overflow-hidden">
+            <img
+              class="w-full h-[294px] hover:scale-[1.1] transition-all"
+              src="https://cdn.prod.website-files.com/653a49092fc4aad2698e5ae8/653a49092fc4aad2698e5b7f_Rectangle%2520165-p-800.png"
+              alt=""
+            />
+          </div>
+          <div class="pl-[20px] pt-[30px] pb-[50px]">
+            <div
+              class="bg-gray-200 w-fit p-[10px] rounded-[3px] font-josefin text-sm font-semibold text-light"
+            >
+              <p class="translate-y-[2px]">Made Year : 2021</p>
+            </div>
+            <p class="mt-[20px] font-josefin text-light text-lg">Mustang</p>
+            <p
+              class="mt-[10px] text-xl font-josefin font-semibold text-primary"
+            >
+              $19000
+            </p>
+          </div>
+          <div
+            class="flex items-center justify-between bg-[#fbfbfb] py-[15px] px-[20px]"
+          >
+            <div class="flex items-center gap-2">
+              <img
+                class="w-[20px]"
+                src="https://cdn.prod.website-files.com/653a49092fc4aad2698e5ab9/653a49092fc4aad2698e5b3c_Mask%20group%20(4).webp"
+                alt=""
+              />
+              <p class="font-josefin">Electric</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <img
+                class="w-[20px]"
+                src="https://cdn.prod.website-files.com/653a49092fc4aad2698e5ab9/653a49092fc4aad2698e5b3b_Mask%20group%20(5).webp"
+                alt=""
+              />
+              <p class="font-josefin">140 KW</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <img
+                class="w-[20px]"
+                src="https://cdn.prod.website-files.com/653a49092fc4aad2698e5ab9/653a49092fc4aad2698e5b3a_Mask%20group%20(6).webp"
+                alt=""
+              />
+              <p class="font-josefin">Manual</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white relative shadow-sm cursor-pointer">
+          <div
+            class="absolute top-[20px] left-0 bg-primary text-white font-josefin font-bold text-base z-[10] p-[10px]"
+          >
+            New Arrival
+          </div>
+          <div class="w-full overflow-hidden">
+            <img
+              class="w-full h-[294px] hover:scale-[1.1] transition-all"
+              src="https://cdn.prod.website-files.com/653a49092fc4aad2698e5ae8/653a49092fc4aad2698e5b80_Rectangle%25206-p-800.png"
+              alt=""
+            />
+          </div>
+          <div class="pl-[20px] pt-[30px] pb-[50px]">
+            <div
+              class="bg-gray-200 w-fit p-[10px] rounded-[3px] font-josefin text-sm font-semibold text-light"
+            >
+              <p class="translate-y-[2px]">Made Year : 2021</p>
+            </div>
+            <p class="mt-[20px] font-josefin text-light text-lg">Mustang</p>
+            <p
+              class="mt-[10px] text-xl font-josefin font-semibold text-primary"
+            >
+              $19000
+            </p>
+          </div>
+          <div
+            class="flex items-center justify-between bg-[#fbfbfb] py-[15px] px-[20px]"
+          >
+            <div class="flex items-center gap-2">
+              <img
+                class="w-[20px]"
+                src="https://cdn.prod.website-files.com/653a49092fc4aad2698e5ab9/653a49092fc4aad2698e5b3c_Mask%20group%20(4).webp"
+                alt=""
+              />
+              <p class="font-josefin">Electric</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <img
+                class="w-[20px]"
+                src="https://cdn.prod.website-files.com/653a49092fc4aad2698e5ab9/653a49092fc4aad2698e5b3b_Mask%20group%20(5).webp"
+                alt=""
+              />
+              <p class="font-josefin">140 KW</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <img
+                class="w-[20px]"
+                src="https://cdn.prod.website-files.com/653a49092fc4aad2698e5ab9/653a49092fc4aad2698e5b3a_Mask%20group%20(6).webp"
+                alt=""
+              />
+              <p class="font-josefin">Manual</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white relative shadow-sm cursor-pointer">
+          <div
+            class="absolute top-[20px] left-0 bg-primary text-white font-josefin font-bold text-base z-[10] p-[10px]"
+          >
+            New Arrival
+          </div>
+          <div class="w-full overflow-hidden">
+            <img
+              class="w-full h-[294px] hover:scale-[1.1] transition-all"
+              src="https://cdn.prod.website-files.com/653a49092fc4aad2698e5ae8/653a49092fc4aad2698e5b76_pexels-prime-cinematics-2036544%201.png"
+              alt=""
+            />
+          </div>
+          <div class="pl-[20px] pt-[30px] pb-[50px]">
+            <div
+              class="bg-gray-200 w-fit p-[10px] rounded-[3px] font-josefin text-sm font-semibold text-light"
+            >
+              <p class="translate-y-[2px]">Made Year : 2021</p>
+            </div>
+            <p class="mt-[20px] font-josefin text-light text-lg">Mustang</p>
+            <p
+              class="mt-[10px] text-xl font-josefin font-semibold text-primary"
+            >
+              $19000
+            </p>
+          </div>
+          <div
+            class="flex items-center justify-between bg-[#fbfbfb] py-[15px] px-[20px]"
+          >
+            <div class="flex items-center gap-2">
+              <img
+                class="w-[20px]"
+                src="https://cdn.prod.website-files.com/653a49092fc4aad2698e5ab9/653a49092fc4aad2698e5b3c_Mask%20group%20(4).webp"
+                alt=""
+              />
+              <p class="font-josefin">Electric</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <img
+                class="w-[20px]"
+                src="https://cdn.prod.website-files.com/653a49092fc4aad2698e5ab9/653a49092fc4aad2698e5b3b_Mask%20group%20(5).webp"
+                alt=""
+              />
+              <p class="font-josefin">140 KW</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <img
+                class="w-[20px]"
+                src="https://cdn.prod.website-files.com/653a49092fc4aad2698e5ab9/653a49092fc4aad2698e5b3a_Mask%20group%20(6).webp"
+                alt=""
+              />
+              <p class="font-josefin">Manual</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white relative shadow-sm cursor-pointer">
+          <div
+            class="absolute top-[20px] left-0 bg-primary text-white font-josefin font-bold text-base z-[10] p-[10px]"
+          >
+            New Arrival
+          </div>
+          <div class="w-full overflow-hidden">
+            <img
+              class="w-full h-[294px] hover:scale-[1.1] transition-all"
+              src="https://cdn.prod.website-files.com/653a49092fc4aad2698e5ae8/653a49092fc4aad2698e5b81_callum-hill-TNvGsWoFQ0A-unsplash-p-800.jpg"
+              alt=""
+            />
+          </div>
+          <div class="pl-[20px] pt-[30px] pb-[50px]">
+            <div
+              class="bg-gray-200 w-fit p-[10px] rounded-[3px] font-josefin text-sm font-semibold text-light"
+            >
+              <p class="translate-y-[2px]">Made Year : 2021</p>
+            </div>
+            <p class="mt-[20px] font-josefin text-light text-lg">Mustang</p>
+            <p
+              class="mt-[10px] text-xl font-josefin font-semibold text-primary"
+            >
+              $19000
+            </p>
+          </div>
+          <div
+            class="flex items-center justify-between bg-[#fbfbfb] py-[15px] px-[20px]"
+          >
+            <div class="flex items-center gap-2">
+              <img
+                class="w-[20px]"
+                src="https://cdn.prod.website-files.com/653a49092fc4aad2698e5ab9/653a49092fc4aad2698e5b3c_Mask%20group%20(4).webp"
+                alt=""
+              />
+              <p class="font-josefin">Electric</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <img
+                class="w-[20px]"
+                src="https://cdn.prod.website-files.com/653a49092fc4aad2698e5ab9/653a49092fc4aad2698e5b3b_Mask%20group%20(5).webp"
+                alt=""
+              />
+              <p class="font-josefin">140 KW</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <img
+                class="w-[20px]"
+                src="https://cdn.prod.website-files.com/653a49092fc4aad2698e5ab9/653a49092fc4aad2698e5b3a_Mask%20group%20(6).webp"
+                alt=""
+              />
+              <p class="font-josefin">Manual</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mt-[100px] bg-cover md:py-[100px] md:pr-[100px] py-[40px] px-[20px]"
+      style="
+        background-image: url(https://cdn.prod.website-files.com/653a49092fc4aad2698e5ab9/653a49092fc4aad2698e5ae7_13841402_2010.i123.005.%201.webp);
+      "
+    >
+      <div class="md:w-[600px] ml-auto text-white">
+        <p class="md:text-[35px] text-[25px] font-josefin font-bold">
+          Start Your Car Search Today
+        </p>
+        <p class="mt-[20px]">
+          Embarking on the journey to find your dream car is an exciting
+          adventure, and it all begins when you start your car search today.
+        </p>
+        <button
+          class="bg-primary py-[10px] px-[30px] rounded-md mt-[40px] font-josefin font-semibold"
+        >
+          Contact With us
+        </button>
+      </div>
+    </div>
+    <div class="mt-[100px] px-[20px]">
+      <p
+        class="lg:w-[60%] w-full mx-auto md:text-[35px] text-[22px] font-josefin font-bold text-center"
+      >
+        All-Terrain Adventures Await: Browse Our Collection of Rugged Off-Road
+        Vehicles.
+      </p>
+      <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-[30px] mt-[70px]">
+        <div>
+          <div
+            class="border border-[rgba(0,0,0,0.1)] rounded-[20px] md:px-[40px] md:py-[50px] px-[20px] py-[40px]"
+          >
+            <img
+              class="md:w-[40px] w-[30px]"
+              src="https://cdn.prod.website-files.com/653a49092fc4aad2698e5ab9/653a49092fc4aad2698e5b49_image%2014.webp"
+              alt=""
+            />
+            <p
+              class="mt-[30px] text-[17px] font-light text-light leading-[1.6]"
+            >
+              I've purchased two cars through Car Hub, and both times the
+              experience was top-notch. The variety of cars they offer, along
+              with the helpful staff.
+            </p>
+            <div class="flex mt-[40px] items-center gap-1 text-secondary">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="m12.001.63l2.903 8.35l8.839.181l-7.045 5.341l2.56 8.462L12 17.914l-7.256 5.05l2.56-8.462L.26 9.161l8.839-.18z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="m12.001.63l2.903 8.35l8.839.181l-7.045 5.341l2.56 8.462L12 17.914l-7.256 5.05l2.56-8.462L.26 9.161l8.839-.18z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="m12.001.63l2.903 8.35l8.839.181l-7.045 5.341l2.56 8.462L12 17.914l-7.256 5.05l2.56-8.462L.26 9.161l8.839-.18z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="m12.001.63l2.903 8.35l8.839.181l-7.045 5.341l2.56 8.462L12 17.914l-7.256 5.05l2.56-8.462L.26 9.161l8.839-.18z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="m12.001.63l2.903 8.35l8.839.181l-7.045 5.341l2.56 8.462L12 17.914l-7.256 5.05l2.56-8.462L.26 9.161l8.839-.18z"
+                />
+              </svg>
+            </div>
+          </div>
+          <div class="py-[20px] px-[40px] flex items-center gap-4">
+            <img
+              class="w-[50px]"
+              src="https://cdn.prod.website-files.com/653a49092fc4aad2698e5ab9/653a49092fc4aad2698e5b48_Ellipse%252021-p-500.png"
+              alt=""
+            />
+            <div>
+              <p
+                class="font-josefin md:text-lg text-sm font-semibold translate-y-[2px] uppercase"
+              >
+                Cameron Williamson
+              </p>
+              <p class="text-sm font-bold text-light">Buyer</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div
+            class="border border-[rgba(0,0,0,0.1)] rounded-[20px] md:px-[40px] md:py-[50px] px-[20px] py-[40px]"
+          >
+            <img
+              class="md:w-[40px] w-[30px]"
+              src="https://cdn.prod.website-files.com/653a49092fc4aad2698e5ab9/653a49092fc4aad2698e5b49_image%2014.webp"
+              alt=""
+            />
+            <p
+              class="mt-[30px] text-[17px] font-light text-light leading-[1.6]"
+            >
+              I've purchased two cars through Car Hub, and both times the
+              experience was top-notch. The variety of cars they offer, along
+              with the helpful staff.
+            </p>
+            <div class="flex mt-[40px] items-center gap-1 text-secondary">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="m12.001.63l2.903 8.35l8.839.181l-7.045 5.341l2.56 8.462L12 17.914l-7.256 5.05l2.56-8.462L.26 9.161l8.839-.18z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="m12.001.63l2.903 8.35l8.839.181l-7.045 5.341l2.56 8.462L12 17.914l-7.256 5.05l2.56-8.462L.26 9.161l8.839-.18z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="m12.001.63l2.903 8.35l8.839.181l-7.045 5.341l2.56 8.462L12 17.914l-7.256 5.05l2.56-8.462L.26 9.161l8.839-.18z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="m12.001.63l2.903 8.35l8.839.181l-7.045 5.341l2.56 8.462L12 17.914l-7.256 5.05l2.56-8.462L.26 9.161l8.839-.18z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="m12.001.63l2.903 8.35l8.839.181l-7.045 5.341l2.56 8.462L12 17.914l-7.256 5.05l2.56-8.462L.26 9.161l8.839-.18z"
+                />
+              </svg>
+            </div>
+          </div>
+          <div class="py-[20px] px-[40px] flex items-center gap-4">
+            <img
+              class="w-[50px]"
+              src="https://cdn.prod.website-files.com/653a49092fc4aad2698e5ab9/653a49092fc4aad2698e5b48_Ellipse%252021-p-500.png"
+              alt=""
+            />
+            <div>
+              <p
+                class="font-josefin md:text-lg text-sm font-semibold translate-y-[2px] uppercase"
+              >
+                Cameron Williamson
+              </p>
+              <p class="text-sm font-bold text-light">Buyer</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div
+            class="border border-[rgba(0,0,0,0.1)] rounded-[20px] md:px-[40px] md:py-[50px] px-[20px] py-[40px]"
+          >
+            <img
+              class="md:w-[40px] w-[30px]"
+              src="https://cdn.prod.website-files.com/653a49092fc4aad2698e5ab9/653a49092fc4aad2698e5b49_image%2014.webp"
+              alt=""
+            />
+            <p
+              class="mt-[30px] text-[17px] font-light text-light leading-[1.6]"
+            >
+              I've purchased two cars through Car Hub, and both times the
+              experience was top-notch. The variety of cars they offer, along
+              with the helpful staff.
+            </p>
+            <div class="flex mt-[40px] items-center gap-1 text-secondary">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="m12.001.63l2.903 8.35l8.839.181l-7.045 5.341l2.56 8.462L12 17.914l-7.256 5.05l2.56-8.462L.26 9.161l8.839-.18z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="m12.001.63l2.903 8.35l8.839.181l-7.045 5.341l2.56 8.462L12 17.914l-7.256 5.05l2.56-8.462L.26 9.161l8.839-.18z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="m12.001.63l2.903 8.35l8.839.181l-7.045 5.341l2.56 8.462L12 17.914l-7.256 5.05l2.56-8.462L.26 9.161l8.839-.18z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="m12.001.63l2.903 8.35l8.839.181l-7.045 5.341l2.56 8.462L12 17.914l-7.256 5.05l2.56-8.462L.26 9.161l8.839-.18z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="m12.001.63l2.903 8.35l8.839.181l-7.045 5.341l2.56 8.462L12 17.914l-7.256 5.05l2.56-8.462L.26 9.161l8.839-.18z"
+                />
+              </svg>
+            </div>
+          </div>
+          <div class="py-[20px] px-[40px] flex items-center gap-4">
+            <img
+              class="w-[50px]"
+              src="https://cdn.prod.website-files.com/653a49092fc4aad2698e5ab9/653a49092fc4aad2698e5b48_Ellipse%252021-p-500.png"
+              alt=""
+            />
+            <div>
+              <p
+                class="font-josefin md:text-lg text-sm font-semibold translate-y-[2px] uppercase"
+              >
+                Cameron Williamson
+              </p>
+              <p class="text-sm font-bold text-light">Buyer</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col items-center px-[20px] mt-[100px]">
+      <h1 class="font-josefin md:text-[50px] text-[25px] font-bold">
+        Latest news
+      </h1>
+      <p
+        class="mt-[10px] lg:w-[50%] w-full text-center md:font-normal font-light text-light"
+      >
+        Stay up-to-date with the latest happenings in the automotive world at
+        Car Hub. Discover what's new and exciting in the world of automobiles at
+        Car Hub.
+      </p>
+      <div class="grid lg:grid-cols-2 grid-cols-1 gap-[30px] mt-[50px]">
+        <div
+          class="bg-card-bg p-[20px] hover:bg-black transition-all duration-600 cursor-pointer group flex md:flex-row flex-col items-center rounded-md gap-[40px]"
+        >
+          <div class="md:w-[40%] w-full shrink-0 overflow-hidden rounded-lg">
+            <img
+              class="w-full md:h-[380px] h-[200px] hover:scale-[1.1] transition-all object-cover"
+              src="https://cdn.prod.website-files.com/653a49092fc4aad2698e5ae8/653a49092fc4aad2698e5b79_Rectangle%2033%20(2).png"
+              alt=""
+            />
+          </div>
+          <div class="">
+            <div
+              class="py-[5px] px-[10px] bg-primary text-white group-hover:text-white transition-all font-josefin font-semibold text-xs w-fit rounded-md"
+            >
+              Auto Industry New
+            </div>
+            <p
+              class="mt-[20px] text-lg group-hover:text-white transition-all font-bold font-josefin"
+            >
+              The Impact of Car Technology on the Automotive Industry
+            </p>
+            <p
+              class="mt-[20px] group-hover:text-white transition-all leading-[1.6] text-light font-normal"
+            >
+              Explore the dynamic relationship between automotive technology and
+              the industry's evolution.
+            </p>
+            <div
+              class="mt-[70px] group-hover:text-white transition-all flex items-center gap-2"
+            >
+              <p class="font-josefin font-semibold">Read more</p>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="M16.01 11H4v2h12.01v3L20 12l-3.99-4z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div
+          class="bg-card-bg p-[20px] hover:bg-black transition-all duration-600 cursor-pointer group flex md:flex-row flex-col items-center rounded-md gap-[40px]"
+        >
+          <div class="md:w-[40%] w-full shrink-0 overflow-hidden rounded-lg">
+            <img
+              class="w-full md:h-[380px] h-[200px] hover:scale-[1.1] transition-all object-cover"
+              src="https://cdn.prod.website-files.com/653a49092fc4aad2698e5ae8/653a49092fc4aad2698e5b78_Rectangle%2033%20(3).png"
+              alt=""
+            />
+          </div>
+          <div class="">
+            <div
+              class="py-[5px] px-[10px] bg-primary text-white group-hover:text-white transition-all font-josefin font-semibold text-xs w-fit rounded-md"
+            >
+              Auto Industry New
+            </div>
+            <p
+              class="mt-[20px] text-lg group-hover:text-white transition-all font-bold font-josefin"
+            >
+              The Impact of Car Technology on the Automotive Industry
+            </p>
+            <p
+              class="mt-[20px] group-hover:text-white transition-all leading-[1.6] text-light font-normal"
+            >
+              Explore the dynamic relationship between automotive technology and
+              the industry's evolution.
+            </p>
+            <div
+              class="mt-[70px] group-hover:text-white transition-all flex items-center gap-2"
+            >
+              <p class="font-josefin font-semibold">Read more</p>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="M16.01 11H4v2h12.01v3L20 12l-3.99-4z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div
+          class="bg-card-bg p-[20px] hover:bg-black transition-all duration-600 cursor-pointer group flex md:flex-row flex-col items-center rounded-md gap-[40px]"
+        >
+          <div class="md:w-[40%] w-full shrink-0 overflow-hidden rounded-lg">
+            <img
+              class="w-full md:h-[380px] h-[200px] hover:scale-[1.1] object-cover transition-all"
+              src="https://cdn.prod.website-files.com/653a49092fc4aad2698e5ae8/653a49092fc4aad2698e5b77_Rectangle%2033%20(1).png"
+              alt=""
+            />
+          </div>
+          <div class="">
+            <div
+              class="py-[5px] px-[10px] bg-primary text-white group-hover:text-white transition-all font-josefin font-semibold text-xs w-fit rounded-md"
+            >
+              Auto Industry New
+            </div>
+            <p
+              class="mt-[20px] text-lg group-hover:text-white transition-all font-bold font-josefin"
+            >
+              The Impact of Car Technology on the Automotive Industry
+            </p>
+            <p
+              class="mt-[20px] group-hover:text-white transition-all leading-[1.6] text-light font-normal"
+            >
+              Explore the dynamic relationship between automotive technology and
+              the industry's evolution.
+            </p>
+            <div
+              class="mt-[70px] group-hover:text-white transition-all flex items-center gap-2"
+            >
+              <p class="font-josefin font-semibold">Read more</p>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="M16.01 11H4v2h12.01v3L20 12l-3.99-4z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div
+          class="bg-card-bg p-[20px] hover:bg-black transition-all duration-600 cursor-pointer group flex md:flex-row flex-col items-center rounded-md gap-[40px]"
+        >
+          <div class="md:w-[40%] w-full shrink-0 overflow-hidden rounded-lg">
+            <img
+              class="w-full md:h-[380px] h-[200px] hover:scale-[1.1] transition-all object-cover"
+              src="https://cdn.prod.website-files.com/653a49092fc4aad2698e5ae8/653a49092fc4aad2698e5b74_Rectangle%2520713-p-800.png"
+              alt=""
+            />
+          </div>
+          <div class="">
+            <div
+              class="py-[5px] px-[10px] bg-primary text-white group-hover:text-white transition-all font-josefin font-semibold text-xs w-fit rounded-md"
+            >
+              Auto Industry New
+            </div>
+            <p
+              class="mt-[20px] text-lg group-hover:text-white transition-all font-bold font-josefin"
+            >
+              The Impact of Car Technology on the Automotive Industry
+            </p>
+            <p
+              class="mt-[20px] group-hover:text-white transition-all leading-[1.6] text-light font-normal"
+            >
+              Explore the dynamic relationship between automotive technology and
+              the industry's evolution.
+            </p>
+            <div
+              class="mt-[70px] group-hover:text-white transition-all flex items-center gap-2"
+            >
+              <p class="font-josefin font-semibold">Read more</p>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="M16.01 11H4v2h12.01v3L20 12l-3.99-4z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mt-[100px] bg-cover text-white flex flex-col items-center py-[80px]"
+      style="
+        background-image: url(https://cdn.prod.website-files.com/653a49092fc4aad2698e5ab9/653a49092fc4aad2698e5b39_email-newsletter-marketing-online-communication-mail-1583291-pxhere%201.webp);
+      "
+    >
+      <p class="font-josefin md:text-[38px] text-[26px] font-semibold">
+        Subscribe and save today!
+      </p>
+      <div
+        class="lg:w-[45%] md:w-[80%] w-[90%] mt-[20px] px-[20px] flex items-center justify-between py-[10px] rounded-full bg-white"
+      >
+        <input
+          type="email"
+          class="w-full border-none outline-none text-light"
+          placeholder="example.com"
+        />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="32"
+          height="32"
+          class="text-primary mr-[20px]"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="currentColor"
+            d="M1.946 9.315c-.522-.174-.527-.455.01-.634L21.044 2.32c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8l-8 6z"
+          />
+        </svg>
+      </div>
+    </div>
+    <div class="py-[60px] pt-[100px] px-[20px]">
+      <div class="grid lg:grid-cols-7 md:grid-cols-3 grid-cols-1 gap-8">
+        <div
+          class="lg:col-span-2 md:col-span-3 border-b-[1px] lg:border-b-transparent border-b-[rgba(0,0,0,0,3)] lg:pb-[0px] pb-[30px]"
+        >
+          <p class="font-josefin text-[20px] font-semibold">
+            Showroom Address:
+          </p>
+          <div class="flex gap-5 mt-5 text-light font-light">
+            <svg
+              class="hover:scale-[1.1] hover:text-primary transition-all"
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="M5 20v-9.144l-1.934 1.49l-.604-.792L12 4.25l9.539 7.304l-.605.787L19 10.856V20zm3-5.23q-.31 0-.54-.23T7.23 14t.23-.54t.54-.23t.54.23t.23.54t-.23.54t-.54.23m4 0q-.31 0-.54-.23t-.23-.54t.23-.54t.54-.23t.54.23t.23.54t-.23.54t-.54.23m4 0q-.31 0-.54-.23t-.23-.54t.23-.54t.54-.23t.54.23t.23.54t-.23.54t-.54.23"
+              />
+            </svg>
+            <p>4517 Washington Ave. Manchester, Kentucky 39495.</p>
+          </div>
+          <div class="flex gap-5 mt-5 text-light font-light">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="26"
+              class="hover:scale-[1.1] hover:text-primary transition-all"
+              height="26"
+              viewBox="0 0 24 24"
+            >
+              <!-- Icon from Material Symbols Light by Google - https://github.com/google/material-design-icons/blob/master/LICENSE -->
+              <path
+                fill="currentColor"
+                d="M18.93 20q-2.528 0-5.184-1.266t-4.944-3.555q-2.27-2.288-3.536-4.935T4 5.07q0-.45.3-.76T5.05 4h2.473q.408 0 .712.257t.411.659L9.142 7.3q.07.42-.025.733t-.333.513L6.59 10.592q.616 1.117 1.361 2.076t1.59 1.817q.87.87 1.874 1.62q1.004.749 2.204 1.414l2.139-2.177q.244-.263.549-.347q.304-.083.674-.033l2.103.43q.408.1.662.411t.254.712v2.435q0 .45-.31.75t-.76.3"
+              />
+            </svg>
+            <p>(406) 555-0120</p>
+          </div>
+          <div class="flex gap-5 mt-5 text-light font-light">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="hover:scale-[1.1] hover:text-primary transition-all"
+              width="26"
+              height="26"
+              viewBox="0 0 24 24"
+            >
+              <!-- Icon from Flowbite Icons by Themesberg - https://github.com/themesberg/flowbite-icons/blob/main/LICENSE -->
+              <g fill="currentColor">
+                <path
+                  d="M2.038 5.61A2 2 0 0 0 2 6v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6q0-.18-.03-.352l-.866.65l-7.89 6.032a2 2 0 0 1-2.429 0L2.884 6.288l-.846-.677Z"
+                />
+                <path
+                  d="M20.677 4.117A2 2 0 0 0 20 4H4q-.338.002-.642.105l.758.607L12 10.742L19.9 4.7z"
+                />
+              </g>
+            </svg>
+            <p>example@gmail.com</p>
+          </div>
+          <div>
+            <div class="flex items-center gap-3 mt-[50px]">
+              <div
+                class="w-[40px] h-[40px] rounded-full flex items-center hover:text-white justify-center text-light transition-all hover:translate-y-[-5px] hover:bg-[#4267b2] bg-transparent"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M14.2 2.875A4.625 4.625 0 0 0 9.575 7.5v2.575H7.1c-.124 0-.225.1-.225.225v3.4c0 .124.1.225.225.225h2.475V20.9c0 .124.1.225.225.225h3.4c.124 0 .225-.1.225-.225v-6.975h2.497c.103 0 .193-.07.218-.17l.85-3.4a.225.225 0 0 0-.218-.28h-3.347V7.5a.775.775 0 0 1 .775-.775h2.6c.124 0 .225-.1.225-.225V3.1c0-.124-.1-.225-.225-.225z"
+                  />
+                </svg>
+              </div>
+              <div
+                class="w-[40px] h-[40px] rounded-full flex items-center hover:text-white justify-center text-light transition-all hover:translate-y-[-5px] hover:bg-[#4267b2] bg-transparent"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M22.46 6c-.77.35-1.6.58-2.46.69c.88-.53 1.56-1.37 1.88-2.38c-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29c0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15c0 1.49.75 2.81 1.91 3.56c-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.2 4.2 0 0 1-1.93.07a4.28 4.28 0 0 0 4 2.98a8.52 8.52 0 0 1-5.33 1.84q-.51 0-1.02-.06C3.44 20.29 5.7 21 8.12 21C16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56c.84-.6 1.56-1.36 2.14-2.23"
+                  />
+                </svg>
+              </div>
+              <div
+                class="w-[40px] h-[40px] rounded-full flex items-center hover:text-white justify-center text-light transition-all hover:translate-y-[-5px] hover:bg-primary bg-transparent"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 32 32"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M16.75.406C10.337.406 4 4.681 4 11.6c0 4.4 2.475 6.9 3.975 6.9c.619 0 .975-1.725.975-2.212c0-.581-1.481-1.819-1.481-4.238c0-5.025 3.825-8.588 8.775-8.588c4.256 0 7.406 2.419 7.406 6.863c0 3.319-1.331 9.544-5.644 9.544c-1.556 0-2.888-1.125-2.888-2.737c0-2.363 1.65-4.65 1.65-7.088c0-4.137-5.869-3.387-5.869 1.613c0 1.05.131 2.212.6 3.169c-.863 3.713-2.625 9.244-2.625 13.069c0 1.181.169 2.344.281 3.525c.212.238.106.213.431.094c3.15-4.313 3.038-5.156 4.463-10.8c.769 1.463 2.756 2.25 4.331 2.25c6.637 0 9.619-6.469 9.619-12.3c0-6.206-5.363-10.256-11.25-10.256z"
+                  />
+                </svg>
+              </div>
+              <div
+                class="w-[40px] h-[40px] rounded-full flex items-center hover:text-white justify-center text-light transition-all hover:translate-y-[-5px] hover:bg-[#4267b2] bg-transparent"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37z"
+                  />
+                </svg>
+              </div>
+              <div
+                class="w-[40px] h-[40px] rounded-full flex items-center hover:text-white justify-center text-light transition-all hover:translate-y-[-5px] hover:bg-primary bg-transparent"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M12.244 4c.534.003 1.87.016 3.29.073l.504.022c1.429.067 2.857.183 3.566.38c.945.266 1.687 1.04 1.938 2.022c.4 1.56.45 4.602.456 5.339l.001.152v.174c-.007.737-.057 3.78-.457 5.339c-.254.985-.997 1.76-1.938 2.022c-.709.197-2.137.313-3.566.38l-.504.023c-1.42.056-2.756.07-3.29.072l-.235.001h-.255c-1.13-.007-5.856-.058-7.36-.476c-.944-.266-1.687-1.04-1.938-2.022c-.4-1.56-.45-4.602-.456-5.339v-.326c.006-.737.056-3.78.456-5.339c.254-.985.997-1.76 1.939-2.021c1.503-.419 6.23-.47 7.36-.476zM9.999 8.5v7l6-3.5z"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <p class="font-josefin text-[20px] font-semibold">Pages</p>
+          <ul class="flex flex-col gap-4 mt-[18px] text-light font-light">
+            <li class="hover:text-primary transition-all">
+              <a href="#">Home</a>
+            </li>
+            <li class="hover:text-primary transition-all">
+              <a href="#">About</a>
+            </li>
+            <li class="hover:text-primary transition-all">
+              <a href="#">Blogs</a>
+            </li>
+            <li class="hover:text-primary transition-all">
+              <a href="#">Gallery</a>
+            </li>
+            <li class="hover:text-primary transition-all">
+              <a href="#">Testimonial</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <p class="font-josefin text-[20px] font-semibold">Find a car</p>
+          <ul class="flex flex-col gap-4 mt-[18px] text-light font-light">
+            <li class="hover:text-primary transition-all">
+              <a href="#">Car</a>
+            </li>
+            <li class="hover:text-primary transition-all">
+              <a href="#">Single Product</a>
+            </li>
+            <li class="hover:text-primary transition-all">
+              <a href="#">Shop</a>
+            </li>
+            <li class="hover:text-primary transition-all">
+              <a href="#">Contact us</a>
+            </li>
+            <li class="hover:text-primary transition-all">
+              <a href="#">404</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <p class="font-josefin text-[20px] font-semibold">Helps</p>
+          <ul class="flex flex-col gap-4 mt-[18px] text-light font-light">
+            <li class="hover:text-primary transition-all">
+              <a href="#">About us</a>
+            </li>
+            <li class="hover:text-primary transition-all">
+              <a href="#">Style Guide</a>
+            </li>
+            <li class="hover:text-primary transition-all">
+              <a href="#">Change-Log</a>
+            </li>
+            <li class="hover:text-primary transition-all">
+              <a href="#">Licensing</a>
+            </li>
+            <li class="hover:text-primary transition-all">
+              <a href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <div class="md:col-span-2">
+          <p class="font-josefin text-[20px] font-semibold">Business Partner</p>
+          <div class="grid grid-cols-4 xl:gap-x-7 gap-x-2 gap-y-2 mt-[30px]">
+            <div class="w-full bg-[rgba(0,0,0,0.1)] p-3">
+              <img
+                src="https://cdn.prod.website-files.com/653a49092fc4aad2698e5ab9/653a49092fc4aad2698e5b17_logo%201.webp"
+                alt=""
+              />
+            </div>
+            <div class="w-full bg-[rgba(0,0,0,0.1)] p-3">
+              <img
+                src="https://cdn.prod.website-files.com/653a49092fc4aad2698e5ab9/653a49092fc4aad2698e5ae2_Logo%207.webp"
+                alt=""
+              />
+            </div>
+            <div class="w-full bg-[rgba(0,0,0,0.1)] p-3">
+              <img
+                src="https://cdn.prod.website-files.com/653a49092fc4aad2698e5ab9/653a49092fc4aad2698e5afc_logo%206.webp"
+                alt=""
+              />
+            </div>
+            <div class="w-full bg-[rgba(0,0,0,0.1)] p-3">
+              <img
+                src="https://cdn.prod.website-files.com/653a49092fc4aad2698e5ab9/653a49092fc4aad2698e5afb_logo%202.webp"
+                alt=""
+              />
+            </div>
+            <div class="w-full bg-[rgba(0,0,0,0.1)] p-3">
+              <img
+                src="https://cdn.prod.website-files.com/653a49092fc4aad2698e5ab9/653a49092fc4aad2698e5ae3_Logo%208.webp"
+                alt=""
+              />
+            </div>
+            <div class="w-full bg-[rgba(0,0,0,0.1)] p-3">
+              <img
+                src="https://cdn.prod.website-files.com/653a49092fc4aad2698e5ab9/653a49092fc4aad2698e5ae6_logo%205.webp"
+                alt=""
+              />
+            </div>
+            <div class="w-full bg-[rgba(0,0,0,0.1)] p-3">
+              <img
+                src="https://cdn.prod.website-files.com/653a49092fc4aad2698e5ab9/653a49092fc4aad2698e5afd_logo%209.webp"
+                alt=""
+              />
+            </div>
+            <div class="w-full bg-[rgba(0,0,0,0.1)] p-3">
+              <img
+                src="https://cdn.prod.website-files.com/653a49092fc4aad2698e5ab9/653a49092fc4aad2698e5b17_logo%201.webp"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="flex mt-[50px] items-center lg:flex-row flex-col md:gap-0 gap-6 justify-between pt-[30px] border-t-[1px] border-[rgba(0,0,0,0.2)]"
+      >
+        <p
+          class="text-lg font-medium lg:text-left text-center font-josefin text-light"
+        >
+          Copyright © 2025 TNC Carhub | Designed by ThemeNcode LLC - Powered by
+          Webflow.com
+        </p>
+        <div class="flex items-center gap-2">
+          <img
+            class="w-[60px]"
+            src="https://cdn.prod.website-files.com/653a49092fc4aad2698e5ab9/653a49092fc4aad2698e5adc_discover.webp"
+            alt=""
+          />
+          <img
+            class="w-[60px]"
+            src="https://cdn.prod.website-files.com/653a49092fc4aad2698e5ab9/653a49092fc4aad2698e5b1d_visa.webp"
+            alt=""
+          />
+          <img
+            class="w-[60px]"
+            src="https://cdn.prod.website-files.com/653a49092fc4aad2698e5ab9/653a49092fc4aad2698e5b13_paypal.webp"
+            alt=""
+          />
+          <img
+            class="w-[60px]"
+            src="https://cdn.prod.website-files.com/653a49092fc4aad2698e5ab9/653a49092fc4aad2698e5b15_mastercard.webp"
+            alt=""
+          />
+          <img
+            class="w-[60px]"
+            src="https://cdn.prod.website-files.com/653a49092fc4aad2698e5ab9/653a49092fc4aad2698e5b2e_american%20express.webp"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
